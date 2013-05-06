@@ -1,0 +1,29 @@
+{
+  "name": "iconic",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Snap a webcam pic, crop it: gorgeous profile pic",
+  "main": "index.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-component": "~0.1.2",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-docker": "0.0.4",
+    "grunt-mocha": "~0.3.0",
+    "chai": "~1.5.0",
+    "mocha": "~1.9.0",
+    "sinon": "~1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:BrettBukowski/iconic.git"
+  },
+  "author": "Brett Bukowski",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "grunt test"
+  }
+}

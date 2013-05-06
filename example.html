@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Iconic Example</title>
+        <link rel="stylesheet" type="text/css" href="build/iconic.css">
+        <style type="text/css">
+        #container {
+          padding: 1em;
+          margin: auto;
+          width: 400px;
+        }
+        #go button {
+          display: block;
+          margin: auto;
+        }
+        </style>
+    </head>
+
+    <body>
+
+      <div id="go">
+        <button type="button">Start!</button>
+      </div>
+
+      <div id="container" style="display:none"></div>
+
+      <script src="build/iconic.js"></script>
+
+      <script>
+      var Iconic = require('iconic'),
+          iconic = new Iconic('#container');
+
+      iconic.on('getUserMedia:success', function () {
+        document.getElementById('container').style.display = 'block';
+      });
+
+      iconic.on('cropped', function (uri) {
+        var img = document.createElement('img');
+        img.src = uri;
+
+        img.addEventListener('load', function () {
+          var container = document.getElementById('container');
+          container.style.width = img.width + 'px';
+          container.appendChild(img);
+
+          // Now is when you'd send the base64 data string off to the server...
+        });
+      });
+
+      document.querySelector('button').addEventListener('click', function (e) {
+        e.target.disabled = true;
+        iconic.startCapture();
+      });
+      </script>
+    </body>
+</html>

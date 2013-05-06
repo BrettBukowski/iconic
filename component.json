@@ -1,0 +1,28 @@
+{
+  "name": "iconic",
+  "repo": "BrettBukowski/iconic",
+  "description": "Snap a webcam pic, crop it: gorgeous profile pic",
+  "version": "0.0.1",
+  "keywords": [
+    "pictures",
+    "crop",
+    "images",
+    "webcam"
+  ],
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js",
+    "lib/Iconic.js",
+    "lib/ConfirmLayer.js"
+  ],
+  "styles": [
+    "styles/Iconic.css"
+  ],
+  "dependencies": {
+    "component/emitter": "*",
+    "component/bind": "*",
+    "brettbukowski/sensorium": "*",
+    "brettbukowski/cropper": "*"
+  }
+}
