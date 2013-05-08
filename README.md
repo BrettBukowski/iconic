@@ -5,6 +5,7 @@ iconic
 
 UI component to facilitate setting a profile picture (à la Trello): Snap a webcam pic, crop it: nang profile pic.
 
+![][demo]
 
 ## Installation
 
@@ -80,7 +81,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-
+[demo]: http://dl.dropboxusercontent.com/u/302368/github/iconic.gif
 [component]: https://github.com/component/component/
 [js]: https://github.com/BrettBukowski/iconic/blob/gh-pages/build/iconic.min.js
 [css]: https://github.com/BrettBukowski/iconic/blob/gh-pages/build/cropper.css
