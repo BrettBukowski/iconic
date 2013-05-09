@@ -66,6 +66,7 @@
         setTimeout(function () {
           var sad = document.getElementById('sad');
           sad.parentNode.removeChild(sad);
+          button.disabled = false;
         }, 3000);
       });
 
@@ -75,7 +76,6 @@
 
         img.addEventListener('load', function () {
           var container = document.getElementById('container');
-          container.style.width = img.width + 'px';
           container.appendChild(img);
           container.insertAdjacentHTML('afterend', '<div class="fadeIn">:-)</div>');
 
