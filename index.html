@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>iconic // BrettBukowski</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="build/iconic.css">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <header>
+        <h1>Iconic</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="https://github.com/BrettBukowski/iconic/archive/master.zip">Download Zip</a></li>
+          <li><a href="docs/lib/Iconic.js.html">Annotated Source</a></li>
+          <li><a href="https://github.com/BrettBukowski/iconic/">Repo</a></li>
+        </ul>
+      </nav>
+
+      <div id="content" class="cf">
+        <div id="container" class="cf">
+          <svg id="placeholder" width="406px" height="306px" viewBox="0 0 406 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+            <title>Placeholder image</title>
+            <description>Blank image</description>
+            <defs></defs>
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path d="M3,3 L3,303 L403,303 L403,3 L3,3 Z M3,3" id="Rectangle 1" stroke="#000000" stroke-width="4"></path>
+              <path d="M401,4 L4,302" id="Line" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+              <path d="M4,4 L402.200002,302.399998" id="Line" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+            </g>
+          </svg>
+        </div>
+
+        <div id="subsidiary" class="cf">
+          <p>Snap a webcam pic and crop it up.</p>
+          <button type="button" id="go">Try it!</button>
+        </div>
+      </div>
+
+      <footer>
+        Project maintained by <a href="https://github.com/BrettBukowski/">BrettBukowski</a>
+      </footer>
+
+      <script src="build/iconic.js"></script>
+      <script>
+      var Iconic = require('iconic'),
+          iconic = new Iconic('#container'),
+          button = document.getElementById('go');
+
+      iconic.on('getUserMedia:success', function () {
+        var placeholder = document.getElementById('placeholder');
+        placeholder.parentNode.removeChild(placeholder);
+        var subsidiary = document.getElementById('subsidiary');
+        subsidiary.parentNode.removeChild(subsidiary);
+      });
+
+      iconic.on('getUserMedia:error', function () {
+        button.insertAdjacentHTML('afterend', '<div id="sad" class="fadeIn">:-(</div>');
+        setTimeout(function () {
+          var sad = document.getElementById('sad');
+          sad.parentNode.removeChild(sad);
+        }, 3000);
+      });
+
+      iconic.on('cropped', function (uri) {
+        var img = document.createElement('img');
+        img.src = uri;
+
+        img.addEventListener('load', function () {
+          var container = document.getElementById('container');
+          container.style.width = img.width + 'px';
+          container.appendChild(img);
+          container.insertAdjacentHTML('afterend', '<div class="fadeIn">:-)</div>');
+
+          // Now is when you'd send the base64 data string off to the server...
+        });
+      });
+
+      button.addEventListener('click', function (e) {
+        e.target.disabled = true;
+        iconic.startCapture();
+      });
+      </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+.travis.yml
+Gruntfile.js
+README.md
+component.json
+package.json
+example.html
+index.js
+test
+styles
+lib
+components
+node_modules
