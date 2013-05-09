@@ -7,6 +7,6 @@ example.html
 index.js
 test
 styles
-lib
+/lib/
 components
 node_modules
