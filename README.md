@@ -1,9 +1,7 @@
 iconic
 ======
 
-[![Build Status](https://travis-ci.org/BrettBukowski/iconic.png?branch=master)](https://travis-ci.org/BrettBukowski/iconic)
-
-[![Code Climate](https://codeclimate.com/github/BrettBukowski/iconic.png)](https://codeclimate.com/github/BrettBukowski/iconic)
+[![Build Status](https://travis-ci.org/BrettBukowski/iconic.png?branch=master)](https://travis-ci.org/BrettBukowski/iconic) [![Code Climate](https://codeclimate.com/github/BrettBukowski/iconic.png)](https://codeclimate.com/github/BrettBukowski/iconic)
 
 UI component to facilitate setting a profile picture (à la Trello): Snap a webcam pic, crop it: nang profile pic.
 
